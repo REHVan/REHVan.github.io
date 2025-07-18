@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Rafael Hernandez Vantuyl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rafael Hernandez Vantuyl's Portfolio website">
+    <link href="CSS/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2a43239fa3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <h2 class="logo" alt="logo"><a href="index.html">Rafael</a></h2>  
+            <ul id="sidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <i class="fa-solid fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+                <div class="header-text">
+                    <h1>Hello, I'm <span>Rafael</span><br /> Hernandez Vantuyl</h1>
+                    <h2>I like to build things on the internet</h2>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- about -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/PersonalPicture.jpeg" alt="user">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Originally from a farm near Kansas City, I ventured to Tampa at 18 to pursue a Computer Science degree at USF. A lifelong learner and big animal lover, I'm passionate about keeping physically active and envisioning a better world. My journey into technology began in 8th grade during a coding class, sparking my logical, determined, and slightly nerdy personality. With ambition and a futurist mindset, I aim to make meaningful contributions in the tech industry.</p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('interest')">Interest</p>
+                </div>
+                <div id="skills" class="tab-contents active-tab">
+                    <ul>
+                        <li><span>Languages</span><br>JavaScript/TypeScript, C#, C++, SQL</li>
+                    </ul>
+                    <ul>
+                        <li><span>Dev Ops</span><br>Azure Dev Ops</li>
+                    </ul>
+                    <ul>
+                        <li><span>Data</span><br>Microsoft SQL Server</li>
+                    </ul>
+                </div> 
+                <div id="education" class="tab-contents">
+                    <ul>
+                        <li><span>2023-2026</span><br>University of South Florida - BS Computer Science</li>
+                    </ul>
+                    <ul>
+                        <li><span>2021-2023</span><br>Metropolitian Community College - AA Applied Science Computer Science</li>
+                    </ul>
+                    <ul>
+                        <li><span>2023-2019</span><br>Lee&#39;s Summit West High School - High School</li>
+                    </ul>
+                    <ul>
+                        <li><span>2022</span><br>Summit Technology Academy - Dual Enrollment</li>
+                    </ul>
+                </div> 
+                <div id="interest" class="tab-contents" >
+                    <ul>
+                        <li><span>Physical</span><br>Boxing/Working Out/Running</li>
+                    </ul>
+                    <ul>
+                        <li><span>Mental</span><br>Spanish/Coding/Reading</li>
+                    </ul>
+                    <ul>
+                        <li><span>Creative</span><br>Guitar/Travel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    <p>Copyright &#169; Rafael.</p>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname)
+    {
+        for(tablink of tablinks)
+        {
+            tablink.classList.remove("active-link");
+        }
+
+        for(tabcontent of tabcontents)
+        {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+       document.getElementById(tabname).classList.add("active-tab");
+
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu()
+    {
+        sidemenu.style.right="0";
+    }
+
+    function closemenu()
+    {
+        sidemenu.style.right="-200px";
+    }
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+

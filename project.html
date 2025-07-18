@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects - Rafael Hernandez Vantuyl</title>
+    <link rel="icon" type="image/x-icon" href="/images/codeImg.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coding Projects made by Rafael Hernandez Vantuyl">
+    <link href="CSS/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/2a43239fa3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <h2 class="logo" alt="logo"><a href="index.html">Rafael</a></h2>  
+        <ul id="sidemenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <i class="fa-solid fa-times" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+    </nav>
+</div>
+<div id="projects">
+        <h1 class="title">Projects</h1>
+        <div class="grid-container-medium">
+            <div class="project-item">
+                <img src="images/Screenshot 2025-07-17 192941.png" alt="work1">
+                <div class="layer">
+                    <h3>UniSponsor</h3>
+                    <p>Developed a mass emailing tool for sponsorship outreach that enabled the creation of customizable email templates, the management of contacts, and the execution of targeted campaigns, sending 300+ emails. Utilized Node.js, Express.js, PostgreSQL, SQL, JavaScript, and React.js to ensure a robust and efficient application.</p>
+                    <a href="https://github.com/REHVan/UniSponsor?tab=readme-ov-file" target="_blank"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="images\Work-4.png" alt="work4">
+                <div class="layer">
+                    <h3>Desi Discipline</h3>
+                    <p>Built at Hackabull 2025, this Chrome extension and web dashboard tracks distractions during study sessions and delivers humorous reminders from a virtual desi mom using React, Next.js, Supabase, and JavaScript.</p>
+                    <a href="https://devpost.com/software/desi-discipline" target="_blank"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="images/work-3.jpeg" alt="work1">
+                <div class="layer">
+                    <h3>Wall-E</h3>
+                    <p>As the Software Lead for a team of four, I developed a navigation program for an Arduino Wall-E robot to autonomously follow walls using ultrasonic sensors, addressing the challenge of engaging K-12 students in STEM education. Our collaborative efforts resulted in significant interest in technology and earned "Best Project" recognition among 30 competing teams.
+                    </p>
+                    <a href="https://www.linkedin.com/in/rafael-vantuyl/details/projects/" target="_blank"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+    </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright &#169; Rafael Hernandez Vantuyl.</p>
+    </div>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+    
+        function openmenu()
+        {
+            sidemenu.style.right="0";
+        }
+    
+        function closemenu()
+        {
+            sidemenu.style.right="-200px";
+        }
+    </script>   
+</body>
+</html>

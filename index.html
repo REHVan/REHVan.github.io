@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Rafael Hernandez Vantuyl</title>
+    <link rel="icon" type="image/x-icon" href="/images/codeImg.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rafael Hernandez Vantuyl's Portfolio website">
+    <link href="CSS/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2a43239fa3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <h2 class="logo" alt="logo"><a href="index.html">Rafael</a></h2>  
+            <ul id="sidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <i class="fa-solid fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+                <div class="header-text">
+                    <h1>Hello, I'm <span>Rafael</span><br /> Hernandez Vantuyl</h1>
+                    <h2>I like to build things on the internet</h2>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- about -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/RafaelHernandezPhoto.jpeg" alt="user">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                    <p>
+                        Hi, I’m Rafael! I’m a <b>computer science student</b> at the University of South Florida who’s always looking to grow, build cool things, and make an impact. I recently <b>interned at Chime</b> where I help build tools that make life easier for customer support teams.
+                    </p>
+                    <br>
+                    <p>
+                        I started out coding at a small company, <b>MTW Solutions</b>, back in <b>Kansas City</b>. We didn’t use fancy frameworks, just real logic and real problems. That experience taught me how to think through challenges and take <b>ownership</b> .
+                    </p>
+                    <br>
+                    <p>
+                        At USF, I <b>lead SHPE’s external team</b>. We connect students to companies, host events with <b>NASA</b> and <b>Amazon</b>, and raise funding to create opportunities for our <b>1,200+</b> members.
+                    </p>
+                    <br>
+                    <p>
+                        I’m always learning, whether it’s <b>Spanish</b>, <b>machine learning</b>, <b>AI tools</b>, or stepping out of my comfort zone with <b>boxing</b>, <b>guitar</b>, <b>bachata</b>, and <b>salsa</b>.
+                    </p>        
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('interest')">Interest</p>
+                </div>
+                <div id="skills" class="tab-contents active-tab">
+                    <ul>
+                        <li><span>Languages</span><br>C#, C/C++, Python, JavaScript, TypeScript, HTML5, CSS, SQL, Ruby — Basic: Java, Swift, SwiftUI</li>
+                    </ul>
+                    <ul>
+                        <li><span>Frameworks</span><br>Bootstrap CSS, React, Node.js, Express, .NET, MVC, jQuery, Ruby on the Rails</li>
+                    </ul>
+                    <ul>
+                        <li><span>Tools & Databases</span><br>Azure DevOps, Git, PostgreSQL, Microsoft SQL Server, MySQL, Unix</li>
+                    </ul>
+                    <ul>
+                        <li><span>Methodologies</span><br>Agile, Jira, CI/CD pipelines, Scrum, MicroService, Unit Testing</li>
+                    </ul>
+                    <ul>
+                        <li><span>Core Skills</span><br>Full Stack Development, Web Development, OOP, DSA, Software Engineering, Program Design, Computer Architecture</li>
+                    </ul>
+                </div> 
+                <div id="education" class="tab-contents">
+                    <ul>
+                        <li><span>2026-2023</span><br>University of South Florida - BS Computer Science</li>
+                    </ul>
+                    <ul>
+                        <li><span>2023-2021</span><br>Metropolitian Community College - AA Applied Science Computer Science</li>
+                    </ul>
+                    <ul>
+                        <li><span>2022</span><br>Summit Technology Academy - Dual Enrollment</li>
+                    </ul>
+                </div> 
+                <div id="interest" class="tab-contents" >
+                    <ul>
+                        <li><span>Physical</span><br>Boxing, Working Out, Running, Bachata, Salsa</li>
+                    </ul>
+                    <ul>
+                        <li><span>Intellect</span><br>Spanish, AI/ML, Reading</li>
+                    </ul>
+                    <ul>
+                        <li><span>Creative</span><br>Guitar, Travel, Journaling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="copyright">
+    <p>Copyright &#169; Rafael Hernandez Vantuyl.</p>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname)
+    {
+        for(tablink of tablinks)
+        {
+            tablink.classList.remove("active-link");
+        }
+
+        for(tabcontent of tabcontents)
+        {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+       document.getElementById(tabname).classList.add("active-tab");
+
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu()
+    {
+        sidemenu.style.right="0";
+    }
+
+    function closemenu()
+    {
+        sidemenu.style.right="-200px";
+    }
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
