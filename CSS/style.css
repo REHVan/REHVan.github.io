@@ -265,85 +265,96 @@ nav ul li a:hover::after{
 
 
  .project-item{
+    background: #1a1a1a;
+    border: 1px solid #262626;
     border-radius: 10px;
-    position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s, border-color 0.4s;
  }
 
- /* The four screenshots run from a 2.2:1 phone capture to a 1.6:1 desktop
-    one. Giving every card the same square frame and fitting the image
-    inside it keeps the grid even and never crops or stretches artwork. */
+ .project-item:hover{
+    transform: translateY(-8px);
+    border-color: #ff004f;
+ }
+
+ /* The screenshots run from a 2.2:1 phone capture to a 1.6:1 desktop one.
+    A fixed frame with the image fitted inside it keeps every card the same
+    shape without cropping or stretching any of the artwork. */
+ .project-media{
+    background: #101010;
+    border-bottom: 1px solid #262626;
+ }
+
  .project-item img{
     width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
     object-fit: contain;
-    background: #141414;
-    border-radius: 10px;
     display: block;
-    transition: transform 0.5s;
  }
 
- .layer{
-    width: 100%;
-    height: 0%;
-    background: linear-gradient(rgba(0,0,0,0.88), #ff004f);
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
+ .project-body{
+    padding: 26px 24px;
     display: flex;
-    align-items: center;
-    /* top-aligned rather than centred, so the headings line up with each
-       other across the row no matter how long each blurb runs */
-    justify-content: flex-start;
     flex-direction: column;
-    padding: 0 26px;
-    text-align: center;
-    font-size: 14px;
-    transition: height 0.5s;
+    /* fills the card so the links can sit on the bottom edge, which lines
+       them up across every card in the row */
+    flex-grow: 1;
  }
 
- .layer h3{
+ .project-body h3{
     font-size: 20px;
     font-weight: 600;
-    /* spacing lives on the children: vertical padding on .layer itself
-       would still paint while the layer is collapsed to height 0 */
-    margin-top: 30px;
-    margin-bottom: 14px;
-    flex-shrink: 0;
+    margin-bottom: 12px;
  }
 
- .layer p{
-    font-size: 13px;
-    line-height: 1.6;
+ .project-body p{
+    font-size: 14px;
     font-weight: 300;
+    line-height: 1.65;
+    color: #b8b8b8;
  }
 
- .layer a{
-    /* pushed to the bottom of the card so every link button sits on the
-       same line as the ones beside it */
+ .tech-list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+ }
+
+ .tech-list li{
+    font-size: 12px;
+    font-weight: 300;
+    color: #ededed;
+    background: #262626;
+    border: 1px solid #333;
+    border-radius: 999px;
+    padding: 5px 12px;
+ }
+
+ .project-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     margin-top: auto;
-    margin-bottom: 30px;
-    flex-shrink: 0;
+    padding-top: 22px;
+ }
+
+ .project-links a{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     color: #ff004f;
     text-decoration: none;
-    font-size: 18px;
-    line-height: 52px;
-    background: #fff;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    text-align: center;
+    font-size: 14px;
+    transition: color 0.3s;
  }
 
- .project-item:hover img{
-    transform: scale(1.1);
- }
-
- .project-item:hover .layer{
-    height: 100%;
+ .project-links a:hover{
+    color: #fff;
  }
 
  .btn{
@@ -544,34 +555,16 @@ nav ul li a:hover::after{
       padding: 40px 20px;
   }
 
-  /* One column makes each card much narrower, and the same blurb then needs
-     roughly twice as many lines. A square would clip the longest ones on a
-     small phone, so the frame goes portrait and the type comes down a step. */
-  .project-item img{
-      aspect-ratio: 3 / 4;
+  .project-body{
+      padding: 22px 20px;
   }
 
-  .layer{
-      padding: 0 20px;
-  }
-
-  .layer h3{
+  .project-body h3{
       font-size: 18px;
-      margin-top: 22px;
-      margin-bottom: 10px;
   }
 
-  .layer p{
-      font-size: 12px;
-      line-height: 1.55;
-  }
-
-  .layer a{
-      width: 46px;
-      height: 46px;
-      line-height: 46px;
-      font-size: 16px;
-      margin-bottom: 22px;
+  .project-body p{
+      font-size: 13px;
   }
 
   .experience-item{
