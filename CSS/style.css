@@ -279,9 +279,9 @@ nav ul li a:hover::after{
     border-color: #ff004f;
  }
 
- /* The screenshots run from a 2.2:1 phone capture to a 1.6:1 desktop one.
-    A fixed frame with the image fitted inside it keeps every card the same
-    shape without cropping or stretching any of the artwork. */
+ /* Every image fills the same 4:3 frame, cropping to fit rather than
+    letterboxing, so the cards read as one set. Where the centre of an image
+    is not where its subject is, object-position moves the crop. */
  .project-media{
     background: #101010;
     border-bottom: 1px solid #262626;
@@ -291,8 +291,18 @@ nav ul li a:hover::after{
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 3;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
+ }
+
+ /* two crops whose subject is not in the middle of the frame: the heading
+    and sign-up line on one, the robot's head on the other */
+ .project-media-upper img{
+    object-position: center 28%;
+ }
+
+ .project-media-subject img{
+    object-position: center 38%;
  }
 
  .project-body{
