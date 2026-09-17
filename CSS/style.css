@@ -270,27 +270,24 @@ nav ul li a:hover::after{
     overflow: hidden;
  }
 
+ /* The four screenshots run from a 2.2:1 phone capture to a 1.6:1 desktop
+    one. Giving every card the same square frame and fitting the image
+    inside it keeps the grid even and never crops or stretches artwork. */
  .project-item img{
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: #141414;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
  }
 
- /* phone screenshots: keep the card in step with the landscape ones
-    instead of letting a tall portrait image stretch the whole row */
- .project-item.project-item-tall img{
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
-    background: #1c1c1c;
- }
-
  .layer{
     width: 100%;
     height: 0%;
-    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    background: linear-gradient(rgba(0,0,0,0.88), #ff004f);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -298,28 +295,45 @@ nav ul li a:hover::after{
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* top-aligned rather than centred, so the headings line up with each
+       other across the row no matter how long each blurb runs */
+    justify-content: flex-start;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 26px;
     text-align: center;
     font-size: 14px;
     transition: height 0.5s;
  }
 
  .layer h3{
-    font-weight: 500;
-    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    /* spacing lives on the children: vertical padding on .layer itself
+       would still paint while the layer is collapsed to height 0 */
+    margin-top: 30px;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+ }
+
+ .layer p{
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: 300;
  }
 
  .layer a{
-    margin-top: 20px;
+    /* pushed to the bottom of the card so every link button sits on the
+       same line as the ones beside it */
+    margin-top: auto;
+    margin-bottom: 30px;
+    flex-shrink: 0;
     color: #ff004f;
     text-decoration: none;
     font-size: 18px;
-    line-height: 60px;
+    line-height: 52px;
     background: #fff;
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     text-align: center;
  }
@@ -527,7 +541,37 @@ nav ul li a:hover::after{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
       grid-gap: 40px;
-      padding: 40px;
+      padding: 40px 20px;
+  }
+
+  /* One column makes each card much narrower, and the same blurb then needs
+     roughly twice as many lines. A square would clip the longest ones on a
+     small phone, so the frame goes portrait and the type comes down a step. */
+  .project-item img{
+      aspect-ratio: 3 / 4;
+  }
+
+  .layer{
+      padding: 0 20px;
+  }
+
+  .layer h3{
+      font-size: 18px;
+      margin-top: 22px;
+      margin-bottom: 10px;
+  }
+
+  .layer p{
+      font-size: 12px;
+      line-height: 1.55;
+  }
+
+  .layer a{
+      width: 46px;
+      height: 46px;
+      line-height: 46px;
+      font-size: 16px;
+      margin-bottom: 22px;
   }
 
   .experience-item{
